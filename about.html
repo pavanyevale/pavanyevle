@@ -3,116 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TechBlaze - About Us</title>
     <style>
-        .navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
-}
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-.logo{
-    color: #ff7200;
-    font-size: 35px;
-    font-family: Arial;
-    padding-left: 20px;
-    float: left;
-    padding-top: 10px;
-    margin-top: 5px
-}
+        /* Navbar Styles */
+        .navbar {
+            width: 12000px;
+            max-width: 1400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(15, 9, 9, 0.7);
+            margin-bottom: 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
 
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px;
-}
+        .logo {
+            color: #ff7200;
+            font-size: 35px;
+            font-weight: bold;
+        }
 
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .menu {
+            display: flex;
+            align-items: center;
+        }
 
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
-}
+        .menu ul {
+            list-style: none;
+            display: flex;
+        }
 
-ul li a{
-    text-decoration: none;
-    color: #412626;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.09s ease-in-out;
-}
+        .menu ul li {
+            margin-left: 20px;
+        }
 
-ul li a:hover{
-    color: #ff7200;
-}
+        .menu ul li a {
+            text-decoration: none;
+            color: #ede8e8;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
+        .menu ul li a:hover {
+            color: #ff7200;
+        }
 
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #412626;
+            cursor: pointer;
+        }
 
-
+        /* About Section Styles */
         .about-section {
-    background: #f4f4f4;
-    padding: 50px 0;
-    text-align: center;
-}
+            background: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-.about-section h1 {
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-top:40px ;
-    font-size: 50px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+        .about-section h1 {
+            font-size: 50px;
+            margin-bottom: 40px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
 
-.about-content img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .about-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.about-content p {
-    font-size: 18px;
-    color: #333;
-    max-width: 500px;
-    line-height: 1.6;
-    text-align: left;
-}
+        .about-content img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
+        .about-content p {
+            font-size: 18px;
+            color: #333;
+            max-width: 500px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu {
+                display: none;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .menu.active {
+                display: block;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu ul li {
+                margin: 10px 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .about-section h1 {
+                font-size: 40px;
+                margin-top: 20px;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-content p {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-section h1 {
+                font-size: 30px;
+            }
+
+            .about-content p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
-
+    <!-- Navbar -->
     <div class="navbar">
-        <div class="icon">
-            <h2 class="logo">TechBlaze</h2>
+        <div class="logo">TechBlaze</div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
         </div>
-
-        <div class="menu">
+        <div class="menu" id="menu">
             <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="service.html">SERVICE</a></li>
@@ -120,25 +183,30 @@ ul li a:hover{
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </div>
-
-       
-    </div> 
-    <div class="second" id="about">
-   
-        <section id="about" class="about-section">
-        <div class="container">
-            <h1>About Us</h1>
-            <div class="about-content">
-                <img src="i.jpeg" alt="About">
-                <p>
-                    At TechBlaze, we're passionate about innovating tech solutions to tackle tomorrow's challenges head-on. As a pioneering software development company, we lead the way in revolutionizing technology. With a team of dedicated and skilled engineers, we're committed to pushing the boundaries of innovation. Our mission is to craft bespoke software solutions that address diverse needs, empowering businesses to thrive in the digital age. We take pride in our commitment to excellence, ensuring that our clients receive cutting-edge solutions that drive success. At TechBlaze, we're not just shaping the future of technology – we're defining it.
-    
-                  <br><br>Revolutionize the digital landscape with our cutting-edge software solutions. From innovative applications to robust systems, we drive technological excellence, empowering businesses to thrive in the digital era.
-                </p>
-            </div>
-        </div>
-    </section>
     </div>
-    
+
+    <!-- About Section -->
+    <div class="about-section">
+        <h1>
+            <br>About Us</h1>
+        <div class="about-content">
+            <img src="i.jpeg" alt="About">
+            <p>
+                At TechBlaze, we're passionate about innovating tech solutions to tackle tomorrow's challenges head-on. As a pioneering software development company, we lead the way in revolutionizing technology. With a team of dedicated and skilled engineers, we're committed to pushing the boundaries of innovation. Our mission is to craft bespoke software solutions that address diverse needs, empowering businesses to thrive in the digital age. We take pride in our commitment to excellence, ensuring that our clients receive cutting-edge solutions that drive success. At TechBlaze, we're not just shaping the future of technology – we're defining it.
+                <br><br>
+                Revolutionize the digital landscape with our cutting-edge software solutions. From innovative applications to robust systems, we drive technological excellence, empowering businesses to thrive in the digital era.
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+        const menu = document.getElementById('menu');
+
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
