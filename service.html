@@ -3,138 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TechBlaze - Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
-}
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-}
+        /* Navbar Styles */
+        .navbar {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-.logo{
-    color: #ff7200;
-    font-size: 35px;
-    font-family: Arial;
-    padding-left: 20px;
-    float: left;
-    padding-top: 10px;
-    margin-top: 5px
-}
+        .logo {
+            color: #ff7200;
+            font-size: 35px;
+            font-weight: bold;
+        }
 
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px;
-}
+        .menu {
+            display: flex;
+            align-items: center;
+        }
 
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .menu ul {
+            list-style: none;
+            display: flex;
+        }
 
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
-}
+        .menu ul li {
+            margin-left: 20px;
+        }
 
-ul li a{
-    text-decoration: none;
-    color: #412626;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.09s ease-in-out;
-}
+        .menu ul li a {
+            text-decoration: none;
+            color: #080505;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            margin-left: 20px;
+        }
 
-ul li a:hover{
-    color: #ff7200;
-}
+        .menu ul li a:hover {
+            color: #ff7200;
+        }
 
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #412626;
+            cursor: pointer;
+        }
 
+        /* Services Section Styles */
+        .services-section {
+            background: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+        }
 
+        .services-section h1 {
+            font-size: 50px;
+            margin-bottom: 40px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
 
-        .services {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 50px 0;
-}
+        .services-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.services h1 {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 50px 0;
-}
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
 
-.service-card {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 250px;
-}
+        .service-card i {
+            font-size: 40px;
+            color: #ff7200;
+            margin-bottom: 20px;
+        }
 
-.service-card img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 15px;
-}
+        .service-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-.service-card h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
+        .service-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
 
-.service-card p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 15px;
-}
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-.service-card a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-}
-.ser h1{
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-top:40px ;
-    font-size: 50px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+            .menu {
+                display: none;
+                width: 100%;
+                margin-top: 20px;
+            }
 
+            .menu.active {
+                display: block;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu ul li {
+                margin: 10px 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .services-section h1 {
+                font-size: 40px;
+            }
+
+            .service-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-section h1 {
+                font-size: 30px;
+            }
+
+            .service-card h2 {
+                font-size: 20px;
+            }
+
+            .service-card p {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <div class="navbar">
-        <div class="icon">
-            <h2 class="logo">TechBlaze</h2>
+        <div class="logo">TechBlaze</div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
         </div>
-
-        <div class="menu">
+        <div class="menu" id="menu">
             <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="service.html">SERVICE</a></li>
@@ -142,45 +197,43 @@ ul li a:hover{
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </div>
-
-       
-    </div> 
-    <div class="third" id="services">
-    <div class="ser" id="services"> <h1>Services</h1></div>
-    <section class="services" >
-        
-    <div class="service-card">
-        <img src="web.png" alt="Website Development">
-        <h2>Website Development</h2>
-        <p>Web development involves the creation of websites for the internet.
-            Our approach emphasizes the design of user-friendly websites that surpass industry standards.</p>
-        <a href="#">Read More</a>
     </div>
 
-    <div class="service-card">
-        <img src="and.png" alt="Android Development">
-        <h2>Android Development</h2>
-        <p>Android development involves the meticulous creation of applications tailored for the Android operating 
-            system. Our commitment lies in engineering user-centric Android applications that exceed prevailing industry benchmarks.</p>
-        <a href="#">Read More</a>
+    <!-- Services Section -->
+    <div class="services-section">
+        <h1>Our Services</h1>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h2>Web Development</h2>
+                <p>We create responsive and user-friendly websites tailored to your business needs.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h2>Mobile App Development</h2>
+                <p>We build high-performance mobile applications for iOS and Android platforms.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h2>UI/UX Design</h2>
+                <p>We design intuitive and visually appealing interfaces for seamless user experiences.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-cloud"></i>
+                <h2>Cloud Solutions</h2>
+                <p>We provide scalable and secure cloud-based solutions for your business.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="service-card">
-        <img src="app.png" alt="iOS Development">
-        <h2>iOS Development</h2>
-        <p>iOS development encompasses the meticulous creation of applications tailored specifically for Apple's iOS platform.
-             Our dedication lies in engineering user-centric iOS applications that surpass prevailing industry standards.</p>
-        <a href="#">Read More</a>
-    </div>
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+        const menu = document.getElementById('menu');
 
-    <div class="service-card">
-        <img src="designer.png" alt="UI/UX Design">
-        <h2>UI/UX Design</h2>
-        <p>We offer comprehensive UI/UX design services to create engaging and intuitive user interfaces for web and mobile applications.
-             Our designers focus on usability, accessibility, and aesthetics to deliver exceptional user experiences.</p>
-        <a href="#">Read More</a>
-    </div>
-</section>
-  </div>
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
