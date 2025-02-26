@@ -3,158 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TechBlaze - Internship</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-     .navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
-}
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-.logo{
-    color: #ff7200;
-    font-size: 35px;
-    font-family: Arial;
-    padding-left: 20px;
-    float: left;
-    padding-top: 10px;
-    margin-top: 5px
-}
+        /* Navbar Styles */
+        .navbar {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px;
-}
+        .logo {
+            color: #ff7200;
+            font-size: 35px;
+            font-weight: bold;
+        }
 
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .menu {
+            display: flex;
+            align-items: center;
+        }
 
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
-}
+        .menu ul {
+            list-style: none;
+            display: flex;
+        }
 
-ul li a{
-    text-decoration: none;
-    color: #412626;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.09s ease-in-out;
-}
+        .menu ul li {
+            margin-left: 20px;
+        }
 
-ul li a:hover{
-    color: #ff7200;
-}
+        .menu ul li a {
+            text-decoration: none;
+            color: #0a0404;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
+        .menu ul li a:hover {
+            color: #ff7200;
+        }
 
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #412626;
+            cursor: pointer;
+        }
 
+        /* Internship Section Styles */
+        .internship-section {
+            background: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+        }
 
+        .internship-section h1 {
+            font-size: 50px;
+            margin-bottom: 40px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
 
+        .internship-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        .internship {
-    background: #f8f9fa;
-    padding: 50px;
-    width: 100%;
-    text-align: center;
-    border-radius: 10px;
-}
-.internship h1,
-.contact-section h1{
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-top:40px ;
-    font-size: 50px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+        .internship-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.internship-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+        .internship-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
 
-.internship-container img {
-    width: 100%;
-    border-radius: 10px;
-}
+        .internship-card i {
+            font-size: 40px;
+            color: #ff7200;
+            margin-bottom: 20px;
+        }
 
-.badge {
-    display: inline-block;
-    background: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-    margin-top: 10px;
-}
+        .internship-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-h2 {
-    color: #001f3f;
-    margin-top: 15px;
-}
+        .internship-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
 
-.internship-benefits {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    font-size: 16px;
-}
+        .internship-card .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff7200;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
 
-.social-icons {
-    list-style: none;
-padding: 20px;
-display: relative;
-justify-content:center ;
-gap: 50px;
-}
+        .internship-card .btn:hover {
+            background: #e65c00;
+        }
 
-.social-icons li {
-display: inline-block;
-background: none;
-}
-.social-icons: hover
-{
-background-color: green;
-transform: rotate(15deg);
-}
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-.social-icons a img {
-width: 30px;
-height: 30px;
-}
+            .menu {
+                display: none;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .menu.active {
+                display: block;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu ul li {
+                margin: 10px 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .internship-section h1 {
+                font-size: 40px;
+            }
+
+            .internship-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .internship-section h1 {
+                font-size: 30px;
+            }
+
+            .internship-card h2 {
+                font-size: 20px;
+            }
+
+            .internship-card p {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <div class="navbar">
-        <div class="icon">
-            <h2 class="logo">TechBlaze</h2>
+        <div class="logo">TechBlaze</div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
         </div>
-
-        <div class="menu">
+        <div class="menu" id="menu">
             <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="service.html">SERVICE</a></li>
@@ -162,71 +212,47 @@ height: 30px;
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </div>
+    </div>
 
-       
-    </div> 
-    <div class="fourth" id="internship">
-        <section class="internship" id="internship">
-            <h1>Internship</h1>
-            <div class="internship-container">
-                <img src="internship.jpg" alt="Internship">
-                <span class="badge">Internship</span>
-                <h2>Discover Growth: Internship Benefits at TechBlaze</h2>
-               <p>Joining TechBlaze means embarking on an exciting journey of
-                 innovation and growth. As a dynamic and forward-thinking company, 
-                 we offer a vibrant and collaborative work environment where creativity
-                  and expertise thrive. Our team is comprised of talented individuals who 
-                  are passionate about pushing the boundaries of technology and delivering 
-                  exceptional results. At TechBlaze, you'll have the opportunity to 
-                  work on cutting-edge projects, collaborate with industry experts, and 
-                  continuously expand your skills and knowledge. We value diversity, creativity, 
-                  and a commitment to excellence, and we provide ample opportunities for 
-                  professional development and advancement. Whether you're an experienced
-                   professional or just starting your career, TechBlaze offers a supportive and 
-                   rewarding workplace where you can make a meaningful impact and shape the
-                    future of technology. Join us and be part of a team that's defining the future
-                     of software development.
-        
-        </p>     
-                <ul class="internship-benefits">
-                    <li>✅ Professional Development</li>
-                    <li>✅ Cutting-Edge Projects</li>
-                    <li>✅ Recognition and Rewards</li>
-                    <li>✅ Networking</li>
-                    <li>✅ Collaborative Culture</li>
-                    <li>✅ Competitive Compensation</li>
-                    <li>✅ Work-Life Balance</li>
-                    <li>✅ Career Growth Opportunities</li>
-                </ul>
-        
-                <div class="social-icons">
-                    <p>Follow us on</p>
-                   
-        
-        
-        <a href="https://www.facebook.com/yourusername" target="_blank">
-        <i class="fa-brands fa-facebook fa-2x"></i>
-        </a>
-        <a href="https://www.twitter.com/yourusername" target="_parent">
-        <i class="fa-brands fa-twitter fa-2x"></i>
-        </a>
-        <a href="https://www.instagram.com/pavan_mane_4" target="_top">
-        <i class="fa-brands fa-instagram fa-2x"></i>
-        </a>
-        
-        
-        <a href="https://https://www.linkedin.com/in/pavan-yevle-66a9a2303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-        <i class="fa-brands fa-linkedin fa-2x"></i>
-        </a>
-        
-        <a href="https://www.telegram.com/9144612496" target="_blank">
-        <i class="fa-brands fa-telegram fa-2x"></i>
-        </ul>
-        </a>
-                </div>
+    <!-- Internship Section -->
+    <div class="internship-section">
+        <h1>Internship Programs</h1>
+        <div class="internship-container">
+            <div class="internship-card">
+                <i class="fas fa-laptop-code"></i>
+                <h2>Web Development</h2>
+                <p>Join our web development internship to learn front-end and back-end technologies.</p>
+                <a href="#" class="btn">Apply Now</a>
             </div>
-        </section>
+            <div class="internship-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h2>Mobile App Development</h2>
+                <p>Learn to build cross-platform mobile applications with our internship program.</p>
+                <a href="#" class="btn">Apply Now</a>
+            </div>
+            <div class="internship-card">
+                <i class="fas fa-paint-brush"></i>
+                <h2>UI/UX Design</h2>
+                <p>Master the art of designing user-friendly interfaces with our UI/UX internship.</p>
+                <a href="#" class="btn">Apply Now</a>
+            </div>
+            <div class="internship-card">
+                <i class="fas fa-cloud"></i>
+                <h2>Cloud Computing</h2>
+                <p>Explore cloud technologies and solutions with our cloud computing internship.</p>
+                <a href="#" class="btn">Apply Now</a>
+            </div>
         </div>
-        
+    </div>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+        const menu = document.getElementById('menu');
+
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
